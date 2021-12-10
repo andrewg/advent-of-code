@@ -1,5 +1,3 @@
-package ca.gniadek.aoc.y21.d10
-
 import ca.gniadek.aoc.util.readInput
 
 fun main() {
