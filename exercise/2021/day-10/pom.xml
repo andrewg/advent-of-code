@@ -6,7 +6,6 @@
         <artifactId>exercise</artifactId>
         <groupId>ca.gniadek.aoc</groupId>
         <version>1.0.0</version>
-        <relativePath>../../pom-exercise.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
