@@ -7,8 +7,7 @@ fun main() {
         return result
     }
 
-    var result = 0
-    readInput().forEach { line ->
+    val result = readInput().map { line ->
         val (left, right) = line
             .split("|")
             .map { text -> text.trim().split(" ").map { it.toSortedSet().joinToString("") } }
@@ -43,7 +42,7 @@ fun main() {
         text[2] = setOf5.single()
 
         val values = text.mapIndexed { index, value -> value to index }.toMap()
-        result += right.map { values[it] }.joinToString("").toInt()
-    }
+        right.map { values[it] }.joinToString("").toInt()
+    }.sum()
     println(result)
 }

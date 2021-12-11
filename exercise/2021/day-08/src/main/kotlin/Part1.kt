@@ -2,8 +2,7 @@ import ca.gniadek.aoc.util.readInput
 
 fun main() {
     fun codes(text: String) = text.trim().split(" ").map { it.toSortedSet().joinToString("") }
-    var count = 0
-    readInput().forEach { line ->
+    val count = readInput().map { line ->
         val (input, output) = line.split("|")
             .map(::codes)
             .map { codes -> codes.sorted().sortedBy { it.length } }
@@ -14,7 +13,7 @@ fun main() {
         val text8 = input[9]
         val values = setOf(text1, text4, text7, text8)
 
-        count += output.filter(values::contains).size
-    }
+        output.filter(values::contains).size
+    }.sum()
     println(count)
 }
