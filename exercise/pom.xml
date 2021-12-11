@@ -15,6 +15,7 @@
 
     <modules>
         <module>2021/day-10</module>
+        <module>2021/day-09</module>
     </modules>
 
     <dependencies>
