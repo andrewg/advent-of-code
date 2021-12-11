@@ -14,8 +14,9 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>2021/day-10</module>
         <module>2021/day-09</module>
+        <module>2021/day-10</module>
+        <module>2021/day-11</module>
     </modules>
 
     <dependencies>
