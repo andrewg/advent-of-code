@@ -17,6 +17,7 @@
         <module>2021/day-09</module>
         <module>2021/day-10</module>
         <module>2021/day-11</module>
+        <module>2021/day-08</module>
     </modules>
 
     <dependencies>
