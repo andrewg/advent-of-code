@@ -1,7 +1,7 @@
 import ca.gniadek.aoc.util.readInput
 
 fun main() {
-    fun MutableSet<String>.deduce(predicate: (String) -> Boolean): String {
+    fun MutableSet<String>.pull(predicate: (String) -> Boolean): String {
         val result = this.single(predicate)
         this.remove(result)
         return result
@@ -32,13 +32,13 @@ fun main() {
         val rightSegments = text[1].toSortedSet()
 
         // Deduce digits with 6 segments
-        text[9] = setOf6.deduce { !it.contains(leftSegments.first()) || !it.contains(leftSegments.last()) }
-        text[0] = setOf6.deduce { it.contains(rightSegments.first()) && it.contains(rightSegments.last()) }
+        text[9] = setOf6.pull { !it.contains(leftSegments.first()) || !it.contains(leftSegments.last()) }
+        text[0] = setOf6.pull { it.contains(rightSegments.first()) && it.contains(rightSegments.last()) }
         text[6] = setOf6.single()
 
         // Deduce digits with 5 segments
-        text[3] = setOf5.deduce { !it.any(leftSegments::contains) }
-        text[5] = setOf5.deduce { text[6].toSet().minus(it.toSet()).size == 1 }
+        text[3] = setOf5.pull { !it.any(leftSegments::contains) }
+        text[5] = setOf5.pull { text[6].toSet().minus(it.toSet()).size == 1 }
         text[2] = setOf5.single()
 
         val values = text.mapIndexed { index, value -> value to index }.toMap()
